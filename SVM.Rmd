@@ -1,5 +1,5 @@
 ---
-  title: 'Chapter 9 Lab: Support Vector Machines'
+  title: 'Support Vector Machines'
   output: rmarkdown::github_document
 ---
 
