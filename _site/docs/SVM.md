@@ -1,4 +1,0 @@
-Support Vector Machines
-================
-
-
