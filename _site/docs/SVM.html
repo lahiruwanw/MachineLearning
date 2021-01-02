@@ -25,12 +25,20 @@ body {
 
 <body>
 
-<h1 id="clustering">Clustering</h1>
-<p>In clustering, we seek to partition the data into distinct groups so that the observations within each group are quite similar to each other, while observations in different groups are quite different from each other. The two-best known clustering approaches:</p>
-<ol>
-<li><em>K</em>-means clustering</li>
-<li>Hierarchical clustering</li>
-</ol>
+<h1 id="support-vector-machines">Support Vector Machines</h1>
+<p>The support vector machine (SVM) is a group of classification algorithms that include a veriety of parametric and non-parametric models. The parametric models include straight lines and similar regression lines. The non-parametric models include a variety of kernel smoothing techniques.</p>
+<h2 id="the-advantages-of-support-vector-machines">The advantages of support vector machines</h2>
+<ul>
+<li><p>Effective in high dimensional spaces.</p></li>
+<li><p>Still effective in cases where number of dimensions is greater than the number of samples.</p></li>
+<li><p>Uses a subset of training points in the decision function (called support vectors), so it is also memory efficient.</p></li>
+<li><p>Versatile: different Kernel functions can be specified for the decision function. Common kernels are provided, but it is also possible to specify custom kernels.</p></li>
+</ul>
+<h2 id="the-disadvantages-of-support-vector-machines">The disadvantages of support vector machines</h2>
+<ul>
+<li><p>If the number of features is much greater than the number of samples, avoid over-fitting in choosing Kernel functions and regularization term is crucial.</p></li>
+<li><p>SVMs do not directly provide probability estimates, these are calculated using an expensive five-fold cross-validation (see Scores and probabilities).</p></li>
+</ul>
 
 </body>
 </html>

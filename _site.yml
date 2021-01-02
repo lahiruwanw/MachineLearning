@@ -10,8 +10,9 @@ navbar:
       href: SVM.html
     - text: "Clustering"
       href: Clustering.html
-    - - text: "Clustering"
-        href: Clustering.html
+      menu:
+      - text: "K-MeansS"
+        href: KMeansClust.html
 output:
   html_document:
     theme: cosmo
