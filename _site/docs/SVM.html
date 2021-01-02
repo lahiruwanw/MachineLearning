@@ -25,34 +25,20 @@ body {
 
 <body>
 
-<h1 id="clustering">Clustering</h1>
-<p>In clustering, we seek to partition the data into distinct groups so that the observations within each group are quite similar to each other, while observations in different groups are quite different from each other. The two-best known clustering approaches:</p>
-<ol>
-<li><em>K</em>-means clustering</li>
-<li>Hierarchical clustering</li>
-</ol>
-<p>In <em>K</em>-means clustering, we seek to group the observations in to a pre-specified <em>K</em> number of clusters. On the other hand, in hierarchical clustering we produce tree-like visual representation of the observations, called a dendrogram, that allows us to obtain the clustering for each possible number of clusters, from 1 to <em>n</em> (total number of observations).</p>
-<h1 id="k-means-clustering"><em>K</em>-means clustering</h1>
-<p>To perform <em>K</em>-means clustering, we must first specify the desired number of clusters <em>K</em>, then the <em>K</em>-means algorithm will assign each observation to exactly one of the <em>K</em> clusters. The steps of <em>K</em>-means algorithm are given.</p>
+<h1 id="support-vector-machines">Support Vector Machines</h1>
+<p>The support vector machine (SVM) is a group of classification algorithms that include a veriety of parametric and non-parametric models. The parametric models include straight lines and similar regression lines. The non-parametric models include a variety of kernel smoothing techniques.</p>
+<h2 id="the-advantages-of-support-vector-machines">The advantages of support vector machines</h2>
 <ul>
-<li><p>Step 1: Choose the number <em>K</em> of clusters.</p></li>
-<li><p>Step 2: Select at random <em>K</em> points, the centroid (not necessarily from the dataset).</p></li>
-<li><p>Step 3: Assign each data point to the closet centroid. Form the <em>K</em> clusters.</p></li>
-<li><p>Step 4: Compute and place the new centroid of each cluster.</p></li>
-<li><p>Step 5: Reassign each data point to the new closest centroid. If any reassignment took place, then go to Step 4, otherwise this is the final assignment of data points.</p></li>
+<li><p>Effective in high dimensional spaces.</p></li>
+<li><p>Still effective in cases where number of dimensions is greater than the number of samples.</p></li>
+<li><p>Uses a subset of training points in the decision function (called support vectors), so it is also memory efficient.</p></li>
+<li><p>Versatile: different Kernel functions can be specified for the decision function. Common kernels are provided, but it is also possible to specify custom kernels.</p></li>
 </ul>
-<p><a href="k_means_clustering.ipynb">Python Code</a></p>
-<p><a href="k_means_clustering.R">R Code</a></p>
-<h1 id="hierachical-clustering">Hierachical Clustering</h1>
-<p>Hierarchical clustering is an alternative approach which does not require to specify pre-defined number of clusters upfront. There are two clustering approaches bottom-up or agglomerative clustering and here I used agglomerative clustering approach. The steps of hierarchical clustering algorithm are given.</p>
+<h2 id="the-disadvantages-of-support-vector-machines">The disadvantages of support vector machines</h2>
 <ul>
-<li><p>Step 1: Make each observation a single-observation cluster. This forms <em>n</em> clusters (<em>n</em> - total number of observations).</p></li>
-<li><p>Step 2: Take the two closest observations and make them one cluster. Now this forms <em>n</em> − 1 clusters.</p></li>
-<li><p>Step 3: Take the two closest clusters and make them one cluster. Now this forms <em>n</em> − 2 clusters.</p></li>
-<li><p>Step 4: Repeat Step 3 until there is only one cluster.</p></li>
+<li><p>If the number of features is much greater than the number of samples, avoid over-fitting in choosing Kernel functions and regularization term is crucial.</p></li>
+<li><p>SVMs do not directly provide probability estimates, these are calculated using an expensive five-fold cross-validation (see Scores and probabilities).</p></li>
 </ul>
-<p><a href="hierarchical_clustering.ipynb">Python Code</a></p>
-<p><a href="hc.R">R Code</a></p>
 
 </body>
 </html>
