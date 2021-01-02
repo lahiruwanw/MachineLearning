@@ -11,14 +11,4 @@
 
 \*Step 5: Reassign each data point to the new closest centroid. If any reassignment took place, then go to Step 4, otherwise this is the final assignment of data points.
 
-# Python Code
-
-## Importing libraries
-
-``` python
-import numpy as np
-x = np.array([1,2,3])
-x[1]
-```
-
-    ## 2
+[Python Code](k_means_clustering.ipynb)
