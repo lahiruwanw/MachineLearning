@@ -46,6 +46,6 @@ Hierarchical clustering is an alternative approach which does not require to spe
 
 * Step 4: Repeat Step 3 until there is only one cluster.
 
-[Python Code](hierarchical_clustering.py)
+[Python Code](hierarchical_clustering.ipnb)
 
 [R Code](hc.R)
