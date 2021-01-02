@@ -11,7 +11,7 @@ navbar:
     - text: "Clustering"
       href: Clustering.html
       menu:
-      - text: "K-MeansS"
+      - text: "K-Means"
         href: KMeansClust.html
 output:
   html_document:
