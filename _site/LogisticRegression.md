@@ -17,11 +17,9 @@ In classification, we predict the qualitative response or the category, which me
 # Logistic Regression
 
 In logistic regression insted of modeling the response *Y* directly, we model the probaility that *Y* belongs to a particular category. For convenience we are using the generic 0/1 coding for the response. Using a linear regression model we model the probability
-$$
-\\\[
+$$\\\[
     p = Pr(Y=1|X) = \\beta\_0 + \\beta\_1 X.
-\\\]
-$$
+\\\]$$
  We must model *p* using a function that gives output between 0 and 1 for all the values of X. In logistic regression, we use the logistic function
 $$
 \\\[
@@ -44,4 +42,4 @@ $$
 
 [Python Code](logistic_regression.ipynb)
 
-[R Code](logistic_regression.R)
+[R Code](.R)
