@@ -8,6 +8,10 @@ navbar:
       href: about.html
     - text: "SVM"
       href: SVM.html
+    - text: "Classification"
+      menu:
+        - text: "Logistic Regression"
+          href: LogisticRegression.html
     - text: "Clustering"
       href: Clustering.html
       
