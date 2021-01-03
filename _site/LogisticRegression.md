@@ -41,3 +41,7 @@ $$
 \\\]
 $$
  The left-hand side is called the log-odds or logit and this logit is linear in *X*.
+
+[Python Code](logistic_regression.ipynb)
+
+[R Code](logistic_regression.R)
