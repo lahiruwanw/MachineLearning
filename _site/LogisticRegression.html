@@ -44,30 +44,16 @@ body {
 </ul>
 <h1 id="logistic-regression">Logistic Regression</h1>
 <p>In logistic regression insted of modeling the response <em>Y</em> directly, we model the probaility that <em>Y</em> belongs to a particular category. For convenience we are using the generic 0/1 coding for the response. Using a linear regression model we model the probability<br />
-$$\[<br />
-p = Pr(Y=1|X) = \beta_0 + \beta_1 X.<br />
-\]$$<br />
-We must model <em>p</em> using a function that gives output between 0 and 1 for all the values of X. In logistic regression, we use the logistic function<br />
-$$<br />
-\[<br />
-p = \dfrac{e^{\beta_0 + \beta_1 X}}{1+e^{\beta_0 + \beta_1 X}}.<br />
-\]<br />
-$$<br />
-Then<br />
-$$<br />
-\[<br />
-\dfrac{p}{1-p} = e^{\beta_0 + \beta_1 X},<br />
-\]<br />
-$$<br />
-where the quantity <em>p</em>/(1 − <em>p</em>) is called the odds, and can take on any value between 0 and ∞. By taking the logarithm of both sides<br />
-$$<br />
-\[<br />
-ln (\dfrac{p}{1-p}) = \beta_0 + \beta_1 X.<br />
-\]<br />
-$$<br />
-The left-hand side is called the log-odds or logit and this logit is linear in <em>X</em>.</p>
+<em>p</em> = Pr(<em>Y</em> = 1|<em>X</em>)=<em>β</em><sub>0</sub> + <em>β</em><sub>1</sub><em>X</em>.<br />
+We must model <em>p</em> using a function that gives output between 0 and 1 for all the values of X. In logistic regression, we use the logistic function</p>
+<p><embed src="data:image/gif;base64,R0lGODlhgwAqALMAAP///wAAAKqqqoiIiNzc3JiYmGZmZu7u7rq6uhAQEHZ2dlRUVERERCIiIszMzDIyMiH5BAEAAAAALAAAAACDACoAAAT+EMhJq704a0yEUBvngZwRCNLCoGHrvrB7sIoTz1KtJfYxxMCgsFWYMDQIhKUoOWoUx99wSh16Hg0CQIAoaClJyzULOOgshwCpym6HlACHgUBaVMJ3iRyAMMAtDwZug4RgBxIHDwVSDWUKjwsLjwqHCIdlDzl/FAUCAYWgbix8BgNMjWCbWxN9mmJaD1Khsy4CnVKCTQSLEqisqrkADF8KqgJfAr60yxgLUmGLizZ0KXeq0QM2rnoLvgUBBpfM4xIFvgoEB9qcXV+/FOoWCAxn5PYaDSuLSqNB/fcAZQRwJ+FfDIMBE2JIo7AhwAbrBKxzSHEQHQ8FxFXcyLGjx4/+IEOKHEmypMkqAgYM2FUg2MmSM9IwMcCEgoFIOHNKehlQCYIEExTYYROgqNGjSJMqXcq0qdOnTjMMGApggUueI1dMSIAQ68cAlxAom3BTZ841Xsc5ACvhwUSvHT4IiYu2AgETLFT0I7Dg0gCaKQl6xQGg3gvChi3wKCNrgoMEXxjUDIXA7bKaTjLg4WRkAxQAjTEMnEUgW4C3C60IwCJYnqotq8loSFP3wtpxp4m8dgFnDxcvruXpEWQGddur8h6oYZY7RIHdby4lolYV0aRIkypJz9Rnd6dPHJtveN7CVsqCrGgyCk5hVKvCr48BiBXe+BLoFJxJCBNsmKle7JGAZQQxxiAzVkPiaUCegudogY0NvABw4GblmJJNUH840M0E34RTUYI25fTAA2dZkI8tAygRDwXUUfXOBCtWUMxJIGKw4EKjtXfBc8BtgNA8iYVU4474lQGejlN0xVMARXLYJEQTSJSWG2YsEMADQVZwIwcKYKTRlABtCeZIB3w5ZgQAOw=="></embed></p>
+<p>Then</p>
+<p><embed src="data:image/gif;base64,R0lGODlhgAAlALMAAP///wAAAKqqqoiIiNzc3JiYmGZmZu7u7rq6uhAQEHZ2dlRUVERERCIiIszMzDIyMiH5BAEAAAAALAAAAACAACUAAAT+EMhJqxRjkFKM/WAojmRpnuchHEEhGS4qz3RtfwiAJJOy3MCgcAgY/CQLD3HJbFoYgkki6qwRBAKFFasFEQwB6gIKDBwkiEa1ppIoHLM24C1KwA+DoMMsecDXMzEADCMIORWChCIKhHlBAzAYBIA0WA8NkyKGFpaYIyxdQQyClDSHDh4CCAWZFJsVpx4HdB8PSkEBraUyCGcABw8EXUezCj4LxgpnvRLAOgaHiAIBQnu7NVTPBY5qsNEXEwhKCt8Xkw+ONggPAaHXJ7cMBAMx3a7l8ZnkFQKZAvbvKAkogEHCtm1wtkkAiKbcwQF/5kRzsMBegQAGfAUkYWCBx4/bIN1RWODI0IGIEoQhsfCqGcoe5TYGLGBPwZUPBVbpApHNFQNaKAIIHUq0qNGjSIsOaQBlW46elWRKFcFi59SrJTqC3CryFzWsYNc0iCjgJVYCCzSGRSEMSwG1YR0kILW2bpBs68za3Usiyrw9evkK5lQhQODBiAFANZy48QjGQjBo4HDLsRPIQFSwiAHDchXMN3Ls6HHEMxPQPhmoXr2argQjE5KYboL6BhkJU2afPjyDjw6GunHFrLHHl5/gQmYtCPAAqA1IBDUgRzxquuNc1hNbyz54XTvuQSIAADs="></embed></p>
+<p>where the quantity <em>p</em>/(1 − <em>p</em>) is called the odds, and can take on any value between 0 and ∞. By taking the logarithm of both sides</p>
+<p><embed src="data:image/gif;base64,R0lGODlhvQAsALMAAP///wAAAMzMzERERNzc3GZmZlRUVLq6upiYmKqqqu7u7oiIiBAQEDIyMiIiInZ2diH5BAEAAAAALAAAAAC9ACwAAAT+EMhJq70ALcy7t4TxjWRpnmhqJoXqVsfwznRto0dzu4i4/8DgSeFQCE8GxHHJPA6UzZGCQYhar6mEA/t5+LjgcMUBdSUWCwIC0XIpAgKxHJwIzBSJN7RQTnnngFYNDzMHAAcME39uAUaBj0EEAVU0C18GbS4NG5CdNw9bNQMJEwykLwuhnqsvDpkzjRIHqi6Scay4QwGnMwKxAA23Mwx9ucYddY4zC3xnlDQDX8diAgOTKA+JosU1BbRACghnvEHh4x4K2QEGjnUM7BXXJwM6NfI7CHZC4RMNzz/8JPj7sOCeAhkX7pVwIM2FryC+hP3gJGGAoRLKCFKw+OENIQn+HxP+I8EgpIscAUzakETuBoGLEhhk/IAAZoeXFGSOMKBNZbyRIwJw86QnSJ8CFEnUHHE0aQdfZ2b+BFBtkjgDNuMN9RTAqQ0lBgwMQrGUJoCwYxdS8SDvDScB2iy8ackqZYcCYfPqNeBzgpIDB6pJELDgDM2sGP4GRogHIYcCCkVOCHDxjVQALDkE2My5s+fPoEN75sDglQ0B/wqQQrjGQ9mnqUklSFAPw4E6pi3c230Z6rTSQIohPeBDcAW8eRs00NtXOCcCtS0IIMWT7TPeFzIfs/ujWIMDzAbHTYzYgveL0DGoGSy0w+7rl4tu90oB+d68fQGYJLDlQRsC413+8BoH+6mSnlwmKefedZS8AZQEXU2zyw8CZHJQHOFRFaB55VFQ4QQXTnAgBSFUkI9EIShQ4TqBQYbVilgllB8kknRohjlRyeJDDK7ZKEEe4uQoYnRVMSCMAA0E4ABFcD24UG4W5CDRFQfA8QNd/UjQWgcDXoCliN9gIdZNC0QURj6XvbAVVYXNCGKafnFwQDYIOMlEQUFNaUU2PxCgZyR/QlIlnJMFysQAjtnwJRCLQkLZB1YqioYabGhG3zSYSuAKpIYOkUd7APBxgZmZlkrBAhvq1qkJhiCiSEMSoGrqrBK8sWqkUSKq665PYGDJBJhcMICbtOLCF1urzsOLKSBhRFbsNK66l6wJv8xyQQHRPZspGe75eIIvjgQjF67aZhptBekYEMAg0xLUTBoXLJBouZkOcCkQvXIwhZ304kIEoTc4S0ES/dKaQxMPcdBDwcVWegRK+RnHMK0aiFHixFFEAAA7"></embed></p>
+<p>The left-hand side is called the log-odds or logit and this logit is linear in <em>X</em>.</p>
 <p><a href="logistic_regression.ipynb">Python Code</a></p>
-<p><a href=".R">R Code</a></p>
+<p><a href="logistic_regression.R">R Code</a></p>
 
 </body>
 </html>
