@@ -26,48 +26,7 @@ body {
 <body>
 
 <h1 id="classification">Classification</h1>
-<p>In classification, we predict the qualitative response or the category, which means we classify the observations to a category or a class. Most of the classification methods first predict the probability that the observation belongs to each of the categories and then assign the label of the category which has the highest probability. There are two main types of classification methods:</p>
-<ol>
-<li>Linear Classification</li>
-</ol>
-<ul>
-<li>Logistic Regression</li>
-<li>Support Vector Machine (SVM)</li>
-</ul>
-<ol>
-<li>Non-linear Classification</li>
-</ol>
-<ul>
-<li><em>K</em>-nearest neighbor (K-NN)</li>
-<li>Kernel Support Vector Machine (SVM)</li>
-<li>Random Forests.</li>
-</ul>
-<h1 id="logistic-regression">Logistic Regression</h1>
-<p>In logistic regression insted of modeling the response <em>Y</em> directly, we model the probaility that <em>Y</em> belongs to a particular category. For convenience we are using the generic 0/1 coding for the response. Using a linear regression model we model the probability<br />
-$$<br />
-\[<br />
-p = Pr(Y=1|X) = \beta_0 + \beta_1 X.<br />
-\]<br />
-$$<br />
-We must model <em>p</em> using a function that gives output between 0 and 1 for all the values of X. In logistic regression, we use the logistic function<br />
-$$<br />
-\[<br />
-p = \dfrac{e^{\beta_0 + \beta_1 X}}{1+e^{\beta_0 + \beta_1 X}}.<br />
-\]<br />
-$$<br />
-Then<br />
-$$<br />
-\[<br />
-\dfrac{p}{1-p} = e^{\beta_0 + \beta_1 X},<br />
-\]<br />
-$$<br />
-where the quantity <em>p</em>/(1 − <em>p</em>) is called the odds, and can take on any value between 0 and ∞. By taking the logarithm of both sides<br />
-$$<br />
-\[<br />
-ln (\dfrac{p}{1-p}) = \beta_0 + \beta_1 X.<br />
-\]<br />
-$$<br />
-The left-hand side is called the log-odds or logit and this logit is linear in <em>X</em>.</p>
+<p>In classification, we predict the qualitative response or the category, which means we classify the observations to a category or a class. Most of the classification methods first predict the probability that the observation belongs to each of the categories and then assign the label of the category which has the highest probability</p>
 
 </body>
 </html>

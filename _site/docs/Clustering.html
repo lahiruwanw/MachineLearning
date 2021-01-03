@@ -25,49 +25,35 @@ body {
 
 <body>
 
-<h1 id="classification">Classification</h1>
-<p>In classification, we predict the qualitative response or the category, which means we classify the observations to a category or a class. Most of the classification methods first predict the probability that the observation belongs to each of the categories and then assign the label of the category which has the highest probability. There are two main types of classification methods:</p>
+<h1 id="clustering">Clustering</h1>
+<p>In clustering, we seek to partition the data into distinct groups so that the observations within each group are quite similar to each other, while observations in different groups are quite different from each other. The two-best known clustering approaches:</p>
 <ol>
-<li>Linear Classification</li>
+<li><em>K</em>-means clustering</li>
+<li>Hierarchical clustering</li>
 </ol>
+<p>In <em>K</em>-means clustering, we seek to group the observations in to a pre-specified <em>K</em> number of clusters. On the other hand, in hierarchical clustering we produce tree-like visual representation of the observations, called a dendrogram, that allows us to obtain the clustering for each possible number of clusters, from 1 to <em>n</em> (total number of observations).</p>
+<h1 id="k-means-clustering"><em>K</em>-means clustering</h1>
+<p>To perform <em>K</em>-means clustering, we must first specify the desired number of clusters <em>K</em>, then the <em>K</em>-means algorithm will assign each observation to exactly one of the <em>K</em> clusters. The steps of <em>K</em>-means algorithm are given.</p>
 <ul>
-<li>Logistic Regression</li>
-<li>Support Vector Machine (SVM)</li>
+<li><p>Step 1: Choose the number <em>K</em> of clusters.</p></li>
+<li><p>Step 2: Select at random <em>K</em> points, the centroid (not necessarily from the dataset).</p></li>
+<li><p>Step 3: Assign each data point to the closet centroid. Form the <em>K</em> clusters.</p></li>
+<li><p>Step 4: Compute and place the new centroid of each cluster.</p></li>
+<li><p>Step 5: Reassign each data point to the new closest centroid. If any reassignment took place, then go to Step 4, otherwise this is the final assignment of data points.</p></li>
 </ul>
-<ol>
-<li>Non-linear Classification</li>
-</ol>
+<p><a href="k_means_clustering.ipynb">Python Code</a></p>
+<p><a href="k_means_clustering.R">R Code</a></p>
+<h1 id="hierachical-clustering">Hierachical Clustering</h1>
+<p>Hierarchical clustering is an alternative approach which does not require to specify pre-defined number of clusters upfront. There are two clustering approaches bottom-up or agglomerative clustering and here I used agglomerative clustering approach. The steps of hierarchical clustering algorithm are given.</p>
 <ul>
-<li><em>K</em>-nearest neighbor (K-NN)</li>
-<li>Kernel Support Vector Machine (SVM)</li>
-<li>Random Forests.</li>
+<li><p>Step 1: Make each observation a single-observation cluster. This forms <em>n</em> clusters (<em>n</em> - total number of observations).</p></li>
+<li><p>Step 2: Take the two closest observations and make them one cluster. Now this forms <em>n</em> − 1 clusters.</p></li>
+<li><p>Step 3: Take the two closest clusters and make them one cluster. Now this forms <em>n</em> − 2 clusters.</p></li>
+<li><p>Step 4: Repeat Step 3 until there is only one cluster.</p></li>
 </ul>
-<h1 id="logistic-regression">Logistic Regression</h1>
-<p>In logistic regression insted of modeling the response <em>Y</em> directly, we model the probaility that <em>Y</em> belongs to a particular category. For convenience we are using the generic 0/1 coding for the response. Using a linear regression model we model the probability<br />
-$$<br />
-\[<br />
-p = Pr(Y=1|X) = \beta_0 + \beta_1 X.<br />
-\]<br />
-$$<br />
-We must model <em>p</em> using a function that gives output between 0 and 1 for all the values of X. In logistic regression, we use the logistic function<br />
-$$<br />
-\[<br />
-p = \dfrac{e^{\beta_0 + \beta_1 X}}{1+e^{\beta_0 + \beta_1 X}}.<br />
-\]<br />
-$$<br />
-Then<br />
-$$<br />
-\[<br />
-\dfrac{p}{1-p} = e^{\beta_0 + \beta_1 X},<br />
-\]<br />
-$$<br />
-where the quantity <em>p</em>/(1 − <em>p</em>) is called the odds, and can take on any value between 0 and ∞. By taking the logarithm of both sides<br />
-$$<br />
-\[<br />
-ln (\dfrac{p}{1-p}) = \beta_0 + \beta_1 X.<br />
-\]<br />
-$$<br />
-The left-hand side is called the log-odds or logit and this logit is linear in <em>X</em>.</p>
+<p><a href="hierarchical_clustering.ipynb">Python Code</a></p>
+<p><a href="hc.R">R Code</a></p>
+<p>The advantage of <em>K</em>-means clustering is it is simple to understand, easily adaptable and works well on small and large datasets. The main disadvantage is you need to choose the number of clusters <em>K</em>. The advantage of hierarchical clustering is that the optimal number of clusters can be obtained by the model itself using the dendrogram. But, the hierarchical clustering is not appropriate for large datasets.</p>
 
 </body>
 </html>
