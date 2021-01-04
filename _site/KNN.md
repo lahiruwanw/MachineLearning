@@ -13,10 +13,10 @@ The observation *x*<sub>0</sub> assign to the category *j* with the largest cond
 
 -   Step 3: Among these *K* neighbors, count the number of observations in each category.
 
--   Step 4: Assign the new observation to the category with largest probability.
+-   Step 4: Assign the new observation to the category with the largest probability.
 
 [Python Code](k_nearest_neighbors.ipynb)
 
 [R Code](knn.R)
 
-The cjoice of *K* has a drastic effect on the *K*-NN classifier. When *K* = 1, the decision boundary is overly flexible but as *K* grows, the decision boundary is less flexible and that is close to linear. When *K* is large, the *K*-NN classifier has a low variance but high bias.
+The choice of *K* has a drastic effect on the *K*-NN classifier. When *K* = 1, the decision boundary is overly flexible, but as *K* grows, the decision boundary is less flexible, and that is close to linear. When *K* is large, the *K*-NN classifier has low variance but high bias.
