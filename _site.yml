@@ -12,6 +12,8 @@ navbar:
       menu:
         - text: "Logistic Regression"
           href: LogisticRegression.html
+        - text: "K-Nearest Neighbors"
+          href: KNN.html
     - text: "Clustering"
       href: Clustering.html
       

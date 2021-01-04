@@ -25,7 +25,19 @@ body {
 
 <body>
 
-<h1 id="k-means-clustering"><em>K</em>-means Clustering</h1>
+<h1 id="k-nearest-neighbors-k-nn"><em>K</em>-Nearest Neighbors (K-NN)</h1>
+<p><em>K</em>-Nearest Neighbors (K-NN) is a non-linear classification method. Given a positive integer <em>K</em>, the K-NN classifier identifies the <em>K</em> observations (represented the set as <em>N</em><sub>0</sub>) nearest to an observation <em>x</em><sub>0</sub>. It then estimates the conditional probability for category <em>j</em> as</p>
+<p><embed src="data:application/json;base64,eyJ0aXRsZSI6IkNvZGVDb2dzIEVxdWF0aW9uIEVkaXRvciIsCiJpbmZvIiA6ICJFeHBpcmVkIGxpY2VuY2UiLAoiZG9tYWluIjogIkNMT1VEIiwKInZlcnNpb24iOiI1LjguMC43NiIsCiJleHBpcnkiIDogeyAieWVhciIgOiAyMDIwIm1vbnRoIiA6IDEyImRheSIgOiAzMX0KfQ=="></embed></p>
+<p>The observation <em>x</em><sub>0</sub> assign to the category <em>j</em> with the largest conditional probability. Here are the steps of the K-NN classifier.</p>
+<ul>
+<li><p>Step 1: Choose the number <em>K</em> of neighbors.</p></li>
+<li><p>Step 2: Take the <em>K</em> nearest neighbors of the new observation <em>x</em><sub>0</sub> using the distance measure (euclidean distance etc.)</p></li>
+<li><p>Step 3: Among these <em>K</em> neighbors, count the number of observations in each category.</p></li>
+<li><p>Step 4: Assign the new observation to the category with largest probability.</p></li>
+</ul>
+<p><a href="k_nearest_neighbors.ipynb">Python Code</a></p>
+<p><a href="knn.R">R Code</a></p>
+<p>The cjoice of <em>K</em> has a drastic effect on the <em>K</em>-NN classifier. When <em>K</em> = 1, the decision boundary is overly flexible but as <em>K</em> grows, the decision boundary is less flexible and that is close to linear. When <em>K</em> is large, the <em>K</em>-NN classifier has a low variance but high bias.</p>
 
 </body>
 </html>
